@@ -10,6 +10,23 @@ use io::Read;
 ///
 /// In the case of an error from the reader the helper will discard both reader and buffer and
 /// return the error.
+///
+/// ```
+/// # #[macro_use]
+/// # extern crate nb;
+/// # extern crate embedded_hal;
+/// # fn main () {
+/// use embedded_hal::io::read_exact;
+///
+/// let source = [5, 6, 7];
+/// let reader = &mut &source[..];
+///
+/// let mut buffer = [0, 0];
+/// let mut reading = read_exact(reader, buffer);
+/// let (_, buffer) = block!(reading.poll()).unwrap();
+/// assert_eq!(source[0..2], buffer);
+/// # }
+/// ```
 pub fn read_exact<R: Read, B: AsMut<[u8]>>(reader: R, buffer: B) -> ReadExact<R, B> {
     ReadExact {
         state: State::Reading {

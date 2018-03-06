@@ -1,3 +1,5 @@
+use core::cmp;
+
 use nb;
 
 /// Non-blocking reader trait
@@ -27,3 +29,20 @@ impl<'a, R: Read> Read for &'a mut R {
     }
 }
 
+#[derive(Debug)]
+pub struct EndOfBuf;
+
+impl<'a> Read for &'a [u8] {
+    type Error = EndOfBuf;
+
+    fn read(&mut self, buf: &mut [u8]) -> nb::Result<usize, Self::Error> {
+        if self.len() == 0 {
+            return Err(nb::Error::Other(EndOfBuf));
+        }
+
+        let len = cmp::min(self.len(), buf.len());
+        buf[..len].copy_from_slice(&self[..len]);
+        *self = &self[len..];
+        Ok(len)
+    }
+}
