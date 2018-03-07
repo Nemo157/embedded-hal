@@ -26,6 +26,8 @@ pub use ::blocking::spi::{
 pub use ::digital::OutputPin as _embedded_hal_digital_OutputPin;
 #[cfg(feature = "unproven")]
 pub use ::digital::InputPin as _embedded_hal_digital_InputPin;
+#[cfg(feature = "unproven")]
+pub use ::rng::Read as _embedded_hal_rng_Read;
 pub use ::serial::Read as _embedded_hal_serial_Read;
 pub use ::serial::Write as _embedded_hal_serial_Write;
 pub use ::spi::FullDuplex as _embedded_hal_spi_FullDuplex;
