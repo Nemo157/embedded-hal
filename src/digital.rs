@@ -22,10 +22,6 @@ pub trait OutputPin {
 /// TODO
 pub enum Event {
     /// TODO
-    High,
-    /// TODO
-    Low,
-    /// TODO
     HighToLow,
     /// TODO
     LowToHigh,
