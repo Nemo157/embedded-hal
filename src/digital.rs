@@ -56,5 +56,5 @@ pub trait DetectingInputPin: InputPin {
     type Detector: Detector;
 
     /// TODO
-    fn detect(&self, event: Event) -> Self::Detector;
+    fn detect(self, event: Event) -> Self::Detector;
 }
