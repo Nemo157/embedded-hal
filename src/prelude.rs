@@ -4,28 +4,28 @@
 //! performing a glob import.
 
 #[cfg(feature = "unproven")]
-pub use ::Capture as _embedded_hal_Capture;
+pub use ::Capture as _;
 #[cfg(feature = "unproven")]
-pub use ::Pwm as _embedded_hal_Pwm;
-pub use ::PwmPin as _embedded_hal_PwmPin;
+pub use ::Pwm as _;
+pub use ::PwmPin as _;
 #[cfg(feature = "unproven")]
-pub use ::Qei as _embedded_hal_Qei;
-pub use ::timer::CountDown as _embedded_hal_timer_CountDown;
-pub use ::blocking::delay::DelayMs as _embedded_hal_blocking_delay_DelayMs;
-pub use ::blocking::delay::DelayUs as _embedded_hal_blocking_delay_DelayUs;
+pub use ::Qei as _;
+pub use ::timer::CountDown as _;
+pub use ::blocking::delay::DelayMs as _;
+pub use ::blocking::delay::DelayUs as _;
 pub use ::blocking::i2c::{
-    Read as _embedded_hal_blocking_i2c_Read,
-    Write as _embedded_hal_blocking_i2c_Write,
-    WriteRead as _embedded_hal_blocking_i2c_WriteRead,
+    Read as _,
+    Write as _,
+    WriteRead as _,
 };
-pub use ::blocking::serial::Write as _embedded_hal_blocking_serial_Write;
+pub use ::blocking::serial::Write as _;
 pub use ::blocking::spi::{
-    Transfer as _embedded_hal_blocking_spi_Transfer,
-    Write as _embedded_hal_blocking_spi_Write,
+    Transfer as _,
+    Write as _,
 };
-pub use ::digital::OutputPin as _embedded_hal_digital_OutputPin;
+pub use ::digital::OutputPin as _;
 #[cfg(feature = "unproven")]
-pub use ::digital::InputPin as _embedded_hal_digital_InputPin;
-pub use ::serial::Read as _embedded_hal_serial_Read;
-pub use ::serial::Write as _embedded_hal_serial_Write;
-pub use ::spi::FullDuplex as _embedded_hal_spi_FullDuplex;
+pub use ::digital::InputPin as _;
+pub use ::serial::Read as _;
+pub use ::serial::Write as _;
+pub use ::spi::FullDuplex as _;

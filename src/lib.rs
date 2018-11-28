@@ -1,3 +1,5 @@
+#![feature(underscore_imports)]
+
 //! A Hardware Abstraction Layer (HAL) for embedded systems
 //!
 //! **NOTE** This HAL is still is active development. Expect the traits presented here to be
